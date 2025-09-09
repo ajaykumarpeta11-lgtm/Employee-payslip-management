@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AK Foundations - Payroll System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #f4f4f4, #ffffff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .main-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-top: 50px;
+            border-top: 6px solid #343a40;
+        }
+        /* Company Header */
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .company-logo {
+            font-size: 40px;
+            font-weight: bold;
+            color: #198754;
+        }
+        .company-name {
+            text-align: right;
+        }
+        .company-name h1 {
+            margin: 0;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .company-name p {
+            margin: 0;
+            font-size: 15px;
+            color: #6c757d;
+        }
+        /* Welcome Text */
+        .welcome {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .welcome h2 {
+            font-weight: 600;
+            color: #212529;
+        }
+        .welcome p {
+            color: #6c757d;
+            font-size: 16px;
+        }
+        /* Menu Buttons */
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .menu a {
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .menu a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background: #198754;
+            border: none;
+        }
+        .btn-primary:hover {
+            background: #157347;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Company Header -->
+        <div class="company-header">
+            <div class="company-logo">🏢</div>
+            <div class="company-name">
+                <h1>AK Foundations</h1>
+                <p>Employee Payroll Management</p>
+            </div>
+        </div>
+
+        <!-- Welcome Section -->
+        <div class="welcome">
+            <h2>Welcome to Payroll System</h2>
+            <p>Manage employees, salaries, and payslips easily with AK Foundations Payroll System.</p>
+        </div>
+
+        <!-- Menu Buttons -->
+        <div class="menu">
+            <a href="/add_employee" class="btn btn-primary">➕ Add Employee</a>
+            <a href="/employees" class="btn btn-outline-dark">👥 View Employees</a>
+            <a href="/payslips" class="btn btn-outline-dark">📄 Generate Payslip</a>
+        </div>
+    </div>
+
+</body>
+</html>

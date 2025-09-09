@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payslip - AK Foundations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #f4f4f4, #ffffff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .payslip-container {
+            max-width: 750px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-top: 6px solid #343a40; 
+            margin-top: 50px;
+        }
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .company-logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #198754; 
+        }
+        .company-name {
+            text-align: right;
+        }
+        .company-name h2 {
+            margin: 0;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .company-name p {
+            margin: 0;
+            font-size: 14px;
+            color: #6c757d;
+        }
+        h4 {
+            color: #212529;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .emp-details {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #6c757d;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+        .emp-details p {
+            margin: 5px 0;
+            font-size: 15px;
+        }
+        .table th {
+            background: #343a40;
+            color: white;
+            text-align: left;
+            width: 40%;
+        }
+        .table td {
+            background: #fdfdfd;
+            font-weight: 500;
+        }
+        .btn-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+        .btn-print {
+            background: #198754;
+            color: white;
+            border: none;
+        }
+        .btn-print:hover {
+            background: #157347;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payslip-container">
+        <!-- Company Header -->
+        <div class="company-header">
+            <div class="company-logo">🏢</div>
+            <div class="company-name">
+                <h2>AK Foundations</h2>
+                <p>Employee Payroll Department</p>
+            </div>
+        </div>
+
+        <!-- Payslip Details -->
+        <h4>Payslip for <strong>{{ emp['name'] }}</strong></h4>
+        <div class="emp-details">
+            <p><strong>Department:</strong> {{ emp['dept'] }}</p>
+            <p><strong>Role:</strong> {{ emp['role'] }}</p>
+        </div>
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Basic</th>
+                <td>{{ emp['basic'] }}</td>
+            </tr>
+            <tr>
+                <th>HRA</th>
+                <td>{{ emp['hra'] }}</td>
+            </tr>
+            <tr>
+                <th>DA</th>
+                <td>{{ emp['da'] }}</td>
+            </tr>
+            <tr>
+                <th>PF</th>
+                <td>{{ emp['pf'] }}</td>
+            </tr>
+            <tr>
+                <th>Gross Salary</th>
+                <td>{{ emp['gross'] }}</td>
+            </tr>
+            <tr>
+                <th>Net Salary</th>
+                <td><strong>{{ emp['net'] }}</strong></td>
+            </tr>
+        </table>
+
+        <div class="btn-section">
+            <a href="/" class="btn btn-secondary">⬅ Back</a>
+            <button onclick="window.print()" class="btn btn-print">🖨 Print Payslip</button>
+        </div>
+    </div>
+
+</body>
+</html>

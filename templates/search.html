@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Search Employee</h2>
+
+<form method="POST">
+    <input type="text" name="search" placeholder="Enter employee name" required>
+    <button type="submit">Search</button>
+</form>
+
+{% if employees %}
+    <h3>Results:</h3>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Salary</th>
+        </tr>
+        {% for emp in employees %}
+        <tr>
+            <td>{{ emp[0] }}</td>
+            <td>{{ emp[1] }}</td>
+            <td>{{ emp[2] }}</td>
+            <td>{{ emp[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+{% endblock %}
